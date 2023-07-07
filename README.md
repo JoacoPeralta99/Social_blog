@@ -19,6 +19,7 @@ Una vez que hayas seguido estos pasos, estarás listo para comenzar a utilizar e
 
 # Admin 
 usuario: joaco
+
 clave: 123
 
 # Uso del blog 
