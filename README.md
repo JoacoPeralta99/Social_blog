@@ -25,9 +25,14 @@ clave: 123
 # Uso del blog 
 
 - Accede al blog: Abre tu navegador y visita la URL del blog (por ejemplo, http://localhost:8000).
+- 
 - Regístrate o inicia sesión: Crea una cuenta o inicia sesión con tus credenciales para acceder a todas las funcionalidades.
+- 
 - Explora los artículos: Descubre los diferentes artículos publicados por otros usuarios y navega por las categorías disponibles.
+- 
 - Comenta en los artículos: Participa dejando comentarios en los artículos que te interesen.
+- 
 - Crea tus propios artículos: Utiliza el panel de control de usuario para crear tus propios artículos. Completa el formulario  y luego guarda y publica tu artículo.
+- 
 - Gestiona tus artículos: Desde el panel de control de usuario, podrás editar o eliminar tus propios artículos según sea necesario.
 
