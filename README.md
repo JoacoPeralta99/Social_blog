@@ -1,4 +1,4 @@
-# Social_blog
+# Social blog
 un blog creado con django que proporciona una plataforma interactiva para compartir artículos y comentarios con otros usuarios.
 
 # Configuración y requisitos
