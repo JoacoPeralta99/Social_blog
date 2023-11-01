@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 from simple_history.models import HistoricalRecords
 
 class Profile(models.Model):
-    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, blank=False, null=False)
     image = models.ImageField(default='batman.png')
     historical = HistoricalRecords()
 
@@ -13,7 +13,7 @@ class Profile(models.Model):
         return f'perfil de {self.user.username}'
     
 class Post(models.Model):
-    user = models.ForeignKey(get_user_model() , on_delete=models.CASCADE , related_name='posts')
+    user = models.ForeignKey(get_user_model() , on_delete=models.CASCADE , related_name='posts', blank=False, null=False)
     timestamp = models.DateTimeField(default=timezone.now)
     content = models.TextField()
 
