@@ -2,7 +2,7 @@ from rest_framework import serializers
 from social.models import Profile, Post
 
 class ProfileSerializer(serializers.ModelSerializer):
-    image = serializers.ImageField()  # campo imagen para el modelo profile
+    image = serializers.ImageField()  # campo imagen para manejar el modelo profile
     class Meta:
         model = Profile
         fields = '__all__'
