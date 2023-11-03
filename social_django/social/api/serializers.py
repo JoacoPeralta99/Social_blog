@@ -1,5 +1,8 @@
+from django.contrib.auth import get_user_model
+from django.utils import timezone
 from rest_framework import serializers
 from social.models import Profile, Post
+
 
 class ProfileSerializer(serializers.ModelSerializer):
     image = serializers.ImageField()  # campo imagen para manejar el modelo profile
@@ -7,7 +10,34 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = '__all__'
 
+
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
+
+
+class TestPostSerializer(serializers.Serializer):
+    name = serializers.CharField()
+    email = serializers.EmailField()
+
+    def validate_name(self,value):
+        # custom validation
+        if 'developer' in value:
+            raise serializers.ValidationError('Error,no puede existir un usuario con ese nombre')
+        
+        return value
+
+    def validate_email(self,value):
+        if value == '':
+            raise serializers.ValidationError('Tiene que indicar un correo')
+        
+        if self.validate_name(self.context['name']) in value:
+                raise serializers.ValidationError('El email no puede contener el nombre')
+            
+
+        return value
+
+    def validate(self,data):
+    
+        return data
