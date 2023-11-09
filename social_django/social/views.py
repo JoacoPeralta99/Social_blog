@@ -11,7 +11,7 @@ def feed(request):
 
 
     context = {'posts': posts}
-    return render(request, 'social/feed.html',context)
+    return render(request, 'blog/feed.html',context)
 
 
 def register(request):              # registro
@@ -26,7 +26,7 @@ def register(request):              # registro
         form = UserRegisterForm()
     
     context = {'form' : form }
-    return render (request,'social/register.html', context)
+    return render (request,'blog/register.html', context)
 
 
 def post(request):
@@ -41,7 +41,7 @@ def post(request):
             return redirect('feed')
     else:
         form = PostForm()
-    return render(request, 'social/post.html', {'form': form})
+    return render(request, 'blog/post.html', {'form': form})
 
 
 
@@ -55,5 +55,5 @@ def profile(request, username= None):
     else:
         posts = current_user.posts.all()
         user = current_user
-    return render (request, 'social/profile.html',{'user':user, 'posts':post})
+    return render (request, 'blog/profile.html',{'user':user, 'posts':post})
 
