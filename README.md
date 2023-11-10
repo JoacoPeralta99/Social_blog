@@ -113,11 +113,10 @@ Debe especificar un id en la url para traer el usuario especifico
 -aca va el json de la solicitud-
 
 {
-  Titulo: -titulo del post-
-  Contenido: -contenido del post-,
-  PerfilID: -ID del perfil-,
-  ComentarioID: -ID del comentaio-,
-  CategoriaID: -ID de la categoria-
+  Content: -contenido del post-,
+  User: 
+  Tags: 
+  Category:
 }
 
 
