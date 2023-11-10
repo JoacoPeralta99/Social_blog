@@ -36,11 +36,11 @@ clave: 123
   
 - Gestiona tus artículos: Desde el panel de control de usuario, podrás editar o eliminar tus propios artículos según sea necesario.
 
-  ## Uso de la API
+## Uso de la API
 
-  La API Posee los endpoints de perfil, perfil-detalle, posteo, posteo-detalle, comentario, comentario-detalle, categoria y categoria-detalle.
+La API Posee los endpoints de perfil, perfil-detalle, posteo, posteo-detalle, comentario, comentario-detalle, categoria y categoria-detalle.
 
-  Tanto el GET, POST y DELETE se realizan de igual forma para cualquier modelo:
+Tanto el GET, POST y DELETE se realizan de igual forma para cualquier modelo:
 
   - Endpoint: http://127.0.0.1:8000/v1/-modelo_requerido-/
  
@@ -48,7 +48,7 @@ clave: 123
 
   - Endpoint: http://127.0.0.1:8000/v1/posteo/
  
-  #### Traer un Usuario
+#### Traer un Usuario
 
 - Método: `GET`
 - Endpoint: http://127.0.0.1:8000/v1/perfil/
