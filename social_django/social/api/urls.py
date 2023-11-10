@@ -1,5 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken.views import ObtainAuthToken 
 from .views.profile_views import ProfileViewSet, ProfileDetailViewSet
 from .views.category_views import CategoryViewSet, CategoryDetailViewSet
 from .views.post_views import PostViewSet, PostDetailViewSet
@@ -18,4 +19,5 @@ router.register(r'comentarios-detalle', CommentDetailViewSet, basename='commenta
 
 urlpatterns = [
     path('v1/', include(router.urls)),
+    path('token/', ObtainAuthToken.as_view(), name = 'token-api')
 ]
