@@ -53,5 +53,35 @@ clave: 123
 - Método: `GET`
 - Endpoint: http://127.0.0.1:8000/v1/perfil/
 
+#### Crear un nuevo usuario
+
+- Método: `POST`
+- Endpoint: http://127.0.0.1:8000/v1/perfil/
+
+**Solicitud**
+
+-aca va el json de la solicitud-
+
+---------------------------------------------------------------------------------
+
+#### Crear un post
+
+- Método: `POST`
+- Endpoint: http://127.0.0.1:8000/v1/posteo/
+
+**Solicitud**
+
+-aca va el json de la solicitud-
+
+
+
+#### Borrar un post
+
+debe incluir en la url el id del post a borrar
+
+- Método: `DELETE`
+- Endpoint: http://127.0.0.1:8000/v1/posteo/34
+
+Puede verificar si se ha borrado realizando un GET o viendolo desde el Admin de Django
   
 
