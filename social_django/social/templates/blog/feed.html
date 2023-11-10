@@ -6,7 +6,15 @@
 {% for post in posts %}
 <article>
     <div class="container-article">
+        {% load static %}
+
+        {% if post.user.profile.image %}
         <img src="{{ post.user.profile.image.url }}">
+        {% else %}
+        <img src="{% static 'profile.jpg' %}">
+        {% endif %}
+
+
         <div>
             <h2 class="username"><a href="{% url 'profile' post.user.username %}">@{{ post.user.username }}</a></h2>
             <i class="clock"></i>
