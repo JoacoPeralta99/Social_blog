@@ -41,7 +41,7 @@ clave: 123
 
 La API Posee los endpoints de perfil, perfil-detalle, posteo, posteo-detalle, comentario, comentario-detalle, categoria y categoria-detalle.
 
-Tanto el GET, POST y DELETE se realizan de igual forma para cualquier modelo:
+Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier modelo:
 
   - Endpoint: http://localhost:8000/api/v1/-modelo_requerido-
  
@@ -67,6 +67,21 @@ Debe especificar un id en la url para traer el usuario especifico
 #### Crear un nuevo Perfil
 
 - Método: `POST`
+- Endpoint: http://localhost:8000/api/v1/perfil/
+
+**Solicitud**
+
+-aca va el json de la solicitud-
+
+{
+ nombre: -nombre del usuario-
+ imagen: -imagen del perfil-
+}
+
+
+#### Editar Un Perfil Existente
+
+- Método: `PUT`
 - Endpoint: http://localhost:8000/api/v1/perfil/
 
 **Solicitud**
