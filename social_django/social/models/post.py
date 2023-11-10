@@ -7,6 +7,8 @@ from django.db.models.signals import post_save
 class Post(models.Model):
     user = models.ForeignKey(get_user_model() , on_delete=models.CASCADE , related_name='posts', blank=False, null=False)
     timestamp = models.DateTimeField(default=timezone.now)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True)
+    tags = models.ManyToManyField('Tag',blank=True)
     content = models.TextField()
 
     class Meta:

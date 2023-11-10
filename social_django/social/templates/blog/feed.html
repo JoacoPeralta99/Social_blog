@@ -1,7 +1,6 @@
 {% extends 'blog/layout.html' %}
 {% load humanize %}
 
-
 {% block content %}
 
 {% for post in posts %}
@@ -14,10 +13,19 @@
             <time data-time="#">{{ post.timestamp|naturaltime }}</time>
             <div class="post">{{ post.content }}</div>
 
+            {% if post.category %}
+            <div class="category">{{ post.category.name }}</div>
+            {% endif %}
+
+            {% for comment in post.comment_set.all %}
+            <div class="comment">
+                <p>{{ comment.author.username }}: {{ comment.content }}</p>
+                <time data-time="#">{{ comment.created_at|naturaltime }}</time>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </article>
-
 {% endfor %}
 
 {% endblock %}
