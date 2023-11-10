@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import UserRegisterForm , PostForm
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model 
 
 def feed(request):
     posts = Post.objects.all()
@@ -30,7 +29,7 @@ def register(request):              # registro
 
 
 def post(request):
-    current_user = get_object_or_404(User, pk=request.user.pk)
+    current_user = get_object_or_404(get_user_model(), pk=request.user.pk)
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -49,7 +48,7 @@ def post(request):
 def profile(request, username= None):
     current_user = request.user
     if username and username != current_user.username:
-        user = User.objects.get(username=username)
+        user = get_user_model().objects.get(username=username)
         posts = user.posts.all()
 
     else:

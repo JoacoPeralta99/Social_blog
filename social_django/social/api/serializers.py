@@ -1,17 +1,31 @@
-from django.contrib.auth import get_user_model
-from django.utils import timezone
 from rest_framework import serializers
-from social.models import Profile, Post
+from social.models import Profile, Post, Category, Comment
 
 
 class ProfileSerializer(serializers.ModelSerializer):
     image = serializers.ImageField()  # campo imagen para manejar el modelo profile
+
     class Meta:
         model = Profile
         fields = '__all__'
 
 
+class CategorySerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField()
+
+    class Meta:
+        model = Category
+        fields = ('id','name')
+
+class CommentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Comment
+        fields = '__all__'
+
 class PostSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Post
         fields = '__all__'
@@ -41,3 +55,11 @@ class TestPostSerializer(serializers.Serializer):
     def validate(self,data):
     
         return data
+        
+
+# class PublicPostSerializer(serializers.ModelSerializer):
+#     image = serializers.ImageField()
+
+#     class Meta:
+#         model = Post
+#         fields = ('id','author','title','content','image','category','tags','created_at','updated_at','slug')
