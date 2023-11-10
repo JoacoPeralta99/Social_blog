@@ -50,10 +50,17 @@ Tanto el GET, POST y DELETE se realizan de igual forma para cualquier modelo:
  
 #### Traer un Usuario
 
+Debe especificar un id en la url para traer el usuario especifico
+
+- Método: `GET`
+- Endpoint: http://localhost:8000/api/v1/perfil/1/
+
+#### Traer perfiles
+
 - Método: `GET`
 - Endpoint: http://localhost:8000/api/v1/perfil/
 
-#### Crear un nuevo usuario
+#### Crear un nuevo perfil
 
 - Método: `POST`
 - Endpoint: http://localhost:8000/api/v1/perfil/
@@ -61,6 +68,11 @@ Tanto el GET, POST y DELETE se realizan de igual forma para cualquier modelo:
 **Solicitud**
 
 -aca va el json de la solicitud-
+
+{
+ nombre: -nombre del usuario-
+ imagen: -imagen del perfil-
+}
 
 ---------------------------------------------------------------------------------
 
