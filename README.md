@@ -41,6 +41,8 @@ clave: 123
 
 La API Posee los endpoints de perfil, perfil-detalle, posteo, posteo-detalle, comentario, comentario-detalle, categoria y categoria-detalle.
 
+Se utilizaran las rutas de Perfil y Posteos para evitar la repeticion
+
 Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier modelo:
 
   - Endpoint: http://localhost:8000/api/v1/-modelo_requerido-
