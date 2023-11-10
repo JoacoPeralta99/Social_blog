@@ -1,18 +1,21 @@
-from django.urls import path
-from .views.profile_views import ProfileAPIView, ProfileDetailAPIView, ProfileTestAPIView
-from .views.category_views import CategoryAPIView, CategoryDetailAPIView
-from .views.post_views import PostAPIView, PostDetailAPIView
-from .views.comment_views import CommentAPIView, CommentDetailAPIView
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views.profile_views import ProfileViewSet, ProfileDetailViewSet
+from .views.category_views import CategoryViewSet, CategoryDetailViewSet
+from .views.post_views import PostViewSet, PostDetailViewSet
+from .views.comment_views import CommentViewSet, CommentDetailViewSet
+
+router = DefaultRouter()
+router.register(r'perfil', ProfileViewSet, basename='perfil-api')
+router.register(r'perfil-detalle', ProfileDetailViewSet, basename='perfil-detalle-api')
+router.register(r'categoria', CategoryViewSet, basename='categoria-api')
+router.register(r'categoria-detalle', CategoryDetailViewSet, basename='categoria-detalle-api')
+router.register(r'posteo', PostViewSet, basename='posteo-api')
+router.register(r'posteo-detalle', PostDetailViewSet, basename='posteo-detalle-api')
+router.register(r'comentarios', CommentViewSet, basename='commentario-api')
+router.register(r'comentarios-detalle', CommentDetailViewSet, basename='commentario-detalle-api')
+
 
 urlpatterns = [
-    path('perfil/', ProfileAPIView.as_view(), name = 'perfil-api'),
-    path('perfil/<int:pk>/', ProfileDetailAPIView.as_view(), name = 'perfil-detalle-api'),
-    path('categoria/', CategoryAPIView.as_view(), name = 'categoria-api'),
-    path('categoria/<int:pk>/', CategoryDetailAPIView.as_view(), name = 'categoria-detalle-api'),
-    path('posteo/', PostAPIView.as_view(), name ='posteo-api'),
-    path('posteo/<int:pk>/', PostDetailAPIView.as_view(), name ='posteo-detalle-api'),
-    path('comentario/', CommentAPIView.as_view(), name='comentario-api'),
-    path('comentario/<int:pk>/', CommentDetailAPIView.as_view(), name='detalle-comentario-api'),
-
+    path('v1/', include(router.urls)),
 ]
-
