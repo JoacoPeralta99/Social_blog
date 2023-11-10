@@ -11,6 +11,8 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-timestamp']
+        verbose_name = ("Posteo")
+        verbose_name_plural=("Posteos")
 
     def __str__(self):
         return f'{self.user.username}: {self.content}'

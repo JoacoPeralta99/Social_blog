@@ -7,6 +7,10 @@ class Profile(models.Model):
     image = models.ImageField(default='batman.png')
     historical = HistoricalRecords()
 
+    class Meta:
+        verbose_name = ("Perfil")
+        verbose_name_plural=("Perfiles")
+
     def __str__(self):
         return f'perfil de {self.user.username}'
     
