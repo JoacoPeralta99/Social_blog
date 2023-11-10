@@ -36,6 +36,7 @@ clave: 123
   
 - Gestiona tus artículos: Desde el panel de control de usuario, podrás editar o eliminar tus propios artículos según sea necesario.
 
+
 ## Uso de la API
 
 La API Posee los endpoints de perfil, perfil-detalle, posteo, posteo-detalle, comentario, comentario-detalle, categoria y categoria-detalle.
@@ -47,20 +48,23 @@ Tanto el GET, POST y DELETE se realizan de igual forma para cualquier modelo:
     Ejemplo:
 
   - Endpoint: http://localhost:8000/api/v1/posteo/
+
  
-#### Traer un Usuario
+#### Traer un Perfil
 
 Debe especificar un id en la url para traer el usuario especifico
 
 - Método: `GET`
 - Endpoint: http://localhost:8000/api/v1/perfil/1/
 
-#### Traer perfiles
+
+#### Traer Perfiles
 
 - Método: `GET`
 - Endpoint: http://localhost:8000/api/v1/perfil/
 
-#### Crear un nuevo perfil
+
+#### Crear un nuevo Perfil
 
 - Método: `POST`
 - Endpoint: http://localhost:8000/api/v1/perfil/
@@ -76,7 +80,13 @@ Debe especificar un id en la url para traer el usuario especifico
 
 ---------------------------------------------------------------------------------
 
-#### Crear un post
+#### Traer Posts
+
+- Método: `GET`
+- Endpoint: http://localhost:8000/api/v1/posteo/
+
+
+#### Crear un Post
 
 - Método: `POST`
 - Endpoint: http://localhost:8000/api/v1/posteo/
@@ -86,8 +96,7 @@ Debe especificar un id en la url para traer el usuario especifico
 -aca va el json de la solicitud-
 
 
-
-#### Borrar un post
+#### Borrar un Post
 
 debe incluir en la url el id del post a borrar
 
