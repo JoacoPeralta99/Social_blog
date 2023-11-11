@@ -58,7 +58,7 @@ Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier model
   - URL: http://localhost:8000/api/token/
   - Headers: 
     - Content-Type: application/json
-  - Body:
+  - Body (enviar como x-www-form-urlencoded):
     - username: joaco
     - password: 123
 
@@ -69,7 +69,9 @@ Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier model
 
 - Método: `GET`
 - Endpoint: http://localhost:8000/api/v1/perfil/
-
+- Headers: 
+- Content-Type: application/json
+- Authorization: Token {token_generico_ejemplo}
 
 
 #### Traer Perfil-detalle
@@ -78,6 +80,7 @@ Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier model
 - URL: http://localhost:8000/api/v1/perfil/1
 - Headers: 
   - Content-Type: application/json
+  - Authorization: Token {token_generico_ejemplo}
 
 
 
@@ -85,6 +88,9 @@ Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier model
 
 - Método: `POST`
 - Endpoint: http://localhost:8000/api/v1/perfil/
+- Headers: 
+  - Content-Type: application/json
+  - Authorization: Token {token_generico_ejemplo}
 
 **Solicitud**
 
@@ -101,6 +107,9 @@ Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier model
 
 - Método: `PUT`
 - Endpoint: http://localhost:8000/api/v1/perfil/
+- Headers: 
+  - Content-Type: application/json
+  - Authorization: Token {token_generico_ejemplo}
 
 **Solicitud**
 
@@ -155,7 +164,10 @@ Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier model
 debe incluir en la url el id del post a borrar
 
 - Método: `DELETE`
-- Endpoint: http://localhost:8000/api/v1/posteo/34
+- Endpoint: http://localhost:8000/api/v1/posteo/1
+- Headers: 
+- Content-Type: application/json
+- Authorization: Token {token_generico_ejemplo}
 
 
 ----------------------------------------------------------------------------------
@@ -165,11 +177,15 @@ debe incluir en la url el id del post a borrar
   - URL: http://localhost:8000/api/v1/posteo/
   - Headers: 
     - Content-Type: application/json
+    - Authorization: Token {token_generico_ejemplo}
 
 
 #### Traer Categoria-detalle
   - Método: GET
   - Descripción: http://localhost:8000/api/v1/posteo/1
+  - Headers: 
+  - Content-Type: application/json
+  - Authorization: Token {token_generico_ejemplo}
 
 
 ----------------------------------------------------------------------------------
@@ -177,11 +193,17 @@ debe incluir en la url el id del post a borrar
 #### Traer Comentarios*
 - Método: GET
 - Descripción: http://localhost:8000/api/v1/comentarios
+- Headers: 
+- Content-Type: application/json
+- Authorization: Token {token_generico_ejemplo}
 
 
 
 #### Traer Comentarios-detalle*
 - Método: GET
 - Descripción: http://localhost:8000/api/v1/comentarios/1
+- Headers: 
+- Content-Type: application/json
+- Authorization: Token {token_generico_ejemplo}
 
 Puede verificar si se ha borrado realizando un GET o viendolo desde el Admin de Django
