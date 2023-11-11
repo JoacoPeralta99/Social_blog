@@ -51,6 +51,18 @@ Tanto el GET, POST, PUT y DELETE se realizan de igual forma para cualquier model
 
   - Endpoint: http://localhost:8000/api/v1/posteo/
 
+---------------------------------------------------------------------------------
+
+#### Token para Auth
+  - Método: POST
+  - URL: http://localhost:8000/api/token/
+  - Headers: 
+    - Content-Type: application/json
+  - Body:
+    - username: joaco
+    - password: 123
+
+---------------------------------------------------------------------------------
  
 #### Traer un Perfil
 
@@ -58,12 +70,21 @@ Debe especificar un id en la url para traer el usuario especifico
 
 - Método: `GET`
 - Endpoint: http://localhost:8000/api/v1/perfil/1/
+- Headers: 
+      - Content-Type: application/json
 
 
 #### Traer Perfiles
 
 - Método: `GET`
 - Endpoint: http://localhost:8000/api/v1/perfil/
+
+#### Traer Perfil-detalle
+
+- Método: GET
+- URL: http://localhost:8000/api/v1/perfil/1
+- Headers: 
+  - Content-Type: application/json
 
 
 #### Crear un nuevo Perfil
@@ -99,8 +120,16 @@ Debe especificar un id en la url para traer el usuario especifico
 
 #### Traer Posts
 
-- Método: `GET`
-- Endpoint: http://localhost:8000/api/v1/posteo/
+- Método: GET
+- URL: http://localhost:8000/api/v1/posteo/
+- Headers: 
+  - Content-Type: application/json
+  - Authorization: Token {token_generico_ejemplo}
+
+
+#### Posteo-detalle
+  - Método: GET
+  - Descripción: http://localhost:8000/api/v1/posteo/1
 
 
 #### Crear un Post
@@ -126,6 +155,86 @@ debe incluir en la url el id del post a borrar
 
 - Método: `DELETE`
 - Endpoint: http://localhost:8000/api/v1/posteo/34
+
+
+----------------------------------------------------------------------------------
+
+#### Traer Categoria
+  - Método: GET
+  - URL: http://localhost:8000/api/v1/posteo/
+  - Headers: 
+    - Content-Type: application/json
+
+
+#### Traer Categoria-detalle
+  - Método: GET
+  - Descripción: http://localhost:8000/api/v1/posteo/1
+
+
+----------------------------------------------------------------------------------
+
+#### Traer Comentarios*
+- Método: GET
+- Descripción: http://localhost:8000/api/v1/comentarios
+
+#### Traer Comentarios-detalle*
+- Método: GET
+- Descripción: http://localhost:8000/api/v1/comentarios/1
+
+
+
+
+- *Api-Posteo*
+    - Método: GET
+    - URL: http://localhost:8000/api/v1/posteo/
+    - Headers: 
+      - Content-Type: application/json
+      - Authorization: Token {token_generico_ejemplo}
+
+  - *Api-Posteo-detalle*
+    - Método: GET
+    - Descripción: http://localhost:8000/api/v1/posteo/1
+
+  - *Api-Categoria*
+    - Método: GET
+    - URL: http://localhost:8000/api/v1/posteo/
+    - Headers: 
+      - Content-Type: application/json
+
+  - *Api-Categoria-detalle*
+    - Método: GET
+    - Descripción: http://localhost:8000/api/v1/posteo/1
+
+  - *Api-Perfil-detallle*
+    - Método: GET
+    - URL: http://localhost:8000/api/v1/perfil/1
+    - Headers: 
+      - Content-Type: application/json
+
+  - *Api-Perfil*
+    - Método: GET
+    - URL: http://localhost:8000/api/v1/perfil/
+    - Headers: 
+      - Content-Type: application/json
+
+  - *Api-Comentarios*
+    - Método: GET
+    - Descripción: http://localhost:8000/api/v1/comentarios
+
+  - *Api-Comentarios-detalle*
+    - Método: GET
+    - Descripción: http://localhost:8000/api/v1/comentarios/1
+
+  - *Api-Token*
+    - Método: POST
+    - URL: http://localhost:8000/api/token/
+    - Headers: 
+      - Content-Type: application/json
+    - Body:
+      - username: joaco
+      - password: 123
+
+
 
 Puede verificar si se ha borrado realizando un GET o viendolo desde el Admin de Django
   
