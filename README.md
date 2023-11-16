@@ -207,3 +207,10 @@ debe incluir en la url el id del post a borrar
 - Authorization: Token {token_generico_ejemplo}
 
 Puede verificar si se ha borrado realizando un GET o viendolo desde el Admin de Django
+
+
+# Test (Pytest)
+- para el uso de las pruebas ejecutar con el comando: pytest
+
+# CSV comando personalizado
+- para ejecutar la carga de datos para el modelo atraves del archivo csv se debe utilizar el comando: python manage.py csv_command category.csv
