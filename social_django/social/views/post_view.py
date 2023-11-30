@@ -1,14 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import *
-from .forms import UserRegisterForm , PostForm
 from django.contrib import messages
 from django.contrib.auth import get_user_model 
+from ..models import Post
+from ..forms import UserRegisterForm , PostForm
 
 def feed(request):
     posts = Post.objects.all()
-
-
-
     context = {'posts': posts}
     return render(request, 'blog/feed.html',context)
 
