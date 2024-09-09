@@ -2,75 +2,47 @@
 
 {% block content %}
 
-<div class="page-titles">
+<div class="page-titles text-center">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Blog</a></li>
         <li class="breadcrumb-item active"><a href="javascript:void(0)">Categorias</a></li>
     </ol>
 </div>
 
-<a href="{% url 'blog:create_category' %}" class="btn btn-rounded btn-info mb-4"><span
-        class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i></span>Añadir Categoría</a>
+<div class="text-center mb-4">
+    <a href="{% url 'blog:create_category' %}" class="btn btn-rounded btn-info">
+        <button type="submit" class="btn light btn-danger">Añadir categoria</button>
+    </a>
+</div>
 
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Listado de Categorías</h4>
+            <h2 class="card-title">Listado de Categorías</h2>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped verticle-middle table-responsive-sm">
-                    <thead>
-                        <tr>
-                            <th><strong>Nombre</strong></th>
-                            <th><strong>Acción</strong></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         {% for category in categories %}
                         <tr>
-                            <h2><a href="{% url 'blog:category_detail' category.id %}">{{ post.title }}</a></h2>
                             <td>
-                                <h4><a class="d-flex align-items-center"
-                                        href="{% url 'blog:category_detail' category.id %}">{{ category.name }}</a></h4>
+                                <h3><a class="d-flex align-items-center"
+                                        href="{% url 'blog:category_detail' category.id %}" style="font-size: 1.5rem;">
+                                        {{ category.name }}
+                                    </a></h3>
                             </td>
                             <td>
                                 <div class="d-flex">
                                     <a href="{% url 'blog:update_category' category.id %}"
-                                        class="btn btn-primary shadow btn-sm sharp me-2"><i
-                                            class="fa fa-pencil"></i></a>
-                                    <a href="{% url 'blog:delete_category' category.id %}"
-                                        class="btn btn-danger shadow btn-sm sharp" data-bs-toggle="modal"
-                                        data-bs-target="#confirmModal{{ category.id }}"><i class="fa fa-trash"></i></a>
-                                </div>
-                                <div class="modal fade" id="confirmModal{{ category.id }}" tabindex="-1"
-                                    aria-labelledby="confirmModalLabel{{ category.id }}" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="confirmModalLabel{{ category.id }}">
-                                                    Confirmar Eliminación</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h3>¿Estás seguro de que deseas eliminar la categoria "<strong>{{
-                                                        category.name }}"?</strong></h3>
-                                                <h5>Esta acción es permanente y eliminará la categoria con su contenido
-                                                </h5>
-                                            </div>
-                                            <div class="modal-footer">
-
-                                                <form method="post"
-                                                    action="{% url 'blog:delete_category' category.id %}">
-                                                    {% csrf_token %}
-                                                    <button type="submit" class="btn light btn-danger">Eliminar</button>
-                                                </form>
-                                                <button type="button" class="btn light btn-primary"
-                                                    data-bs-dismiss="modal">Cancelar</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        class="btn btn-primary shadow btn-sm sharp me-2">
+                                        <i class="fa fa-pencil"></i> Editar
+                                    </a>
+                                    <form method="post" action="{% url 'blog:delete_category' category.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn light btn-danger">Eliminar</button>
+                                    </form>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
